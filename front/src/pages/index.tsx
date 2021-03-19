@@ -4,6 +4,7 @@ import Shell from '../components/shell';
 import Map from '../components/Map';
 
 export default function Home() {
+
   return (
     <>
     <Head>
@@ -26,7 +27,7 @@ export default function Home() {
     </Head>
     <Shell>
       {/* <!-- This example requires Tailwind CSS v2.0+ --> */}
-      <div className="bg-white h-full sm:h-1/2 w-full sm:w-2/4 shadow overflow-hidden sm:rounded-lg">
+      <div className="bg-white h-full sm:h-1/2 w-full sm:w-2/4 shadow overflow-hidden rounded-lg">
         <div className="px-4 py-5 sm:px-6">
           <h3 className="text-lg leading-6 font-medium text-gray-900">
             Til B

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import restrictMap from '../libs/heremap';
 
 export default class Map extends React.Component {
   mapRef = React.createRef();
@@ -13,13 +14,14 @@ export default class Map extends React.Component {
     });
 
     const defaultLayers = platform.createDefaultLayers();
+    defaultLayers.vector.normal.map.setMin(11);
 
     const map = new H.Map(
       this.mapRef.current,
       defaultLayers.vector.normal.map,
       {
-        center: { lat: 50, lng: 5 },
-        zoom: 4,
+        center: { lat: 64.14475780741687, lng: -21.920529621931507 },
+        zoom: 16,
         pixelRatio: window.devicePixelRatio || 1
       }
     );
@@ -32,8 +34,8 @@ export default class Map extends React.Component {
     // Create the default UI components to allow the user to interact with them
     // This variable is unused
     const ui = H.ui.UI.createDefault(map, defaultLayers);
-
     this.setState({ map });
+	  restrictMap(map);
   }
 
   componentWillUnmount() {
